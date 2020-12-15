@@ -8,16 +8,18 @@ rm -f hydrand.zip
 # change to directory in which the hydrand.py folder is
 cd ../../..
 
-rm -rf hydrand.py/logs/*
+pwd
 
-zip -X -r -9 hydrand.py/aws/hydrand-base.zip -r hydrand.py/lib     --include '*.py' '*.so'
-zip -X -r -9 hydrand.py/aws/hydrand-base.zip -r hydrand.py/config  --exclude hydrand.py/config/network/**\*
-zip -X -r -9 hydrand.py/aws/hydrand-base.zip -r \
-    hydrand.py/hydrand/ed25519     \
-    hydrand.py/hydrand/ed25519_ref \
+rm -rf hydrand/logs/*
+
+zip -X -r -9 hydrand/evaluation/aws/hydrand-base.zip -r hydrand/lib     --include '*.py' '*.so'
+zip -X -r -9 hydrand/evaluation/aws/hydrand-base.zip -r hydrand/config  --exclude hydrand/config/network/**\*
+zip -X -r -9 hydrand/evaluation/aws/hydrand-base.zip -r \
+    hydrand/hydrand/ed25519     \
+    hydrand/hydrand/ed25519_ref \
     --include '*.py' '*.txt'
 
-zip -X -r -9 hydrand.py/aws/hydrand.zip hydrand.py/logs
-zip -X -r -9 hydrand.py/aws/hydrand.zip hydrand.py/config/network
-zip -X -r -9 hydrand.py/aws/hydrand.zip hydrand.py/hydrand/*.py
-zip -X -r -9 hydrand.py/aws/hydrand.zip hydrand.py/testing
+# zip -X -r -9 hydrand/evaluation/aws/hydrand.zip hydrand/logs
+zip -X -r -9 hydrand/evaluation/aws/hydrand.zip hydrand/config/network
+zip -X -r -9 hydrand/evaluation/aws/hydrand.zip hydrand/hydrand/*.py
+# zip -X -r -9 hydrand/evaluation/aws/hydrand.zip hydrand/testing
